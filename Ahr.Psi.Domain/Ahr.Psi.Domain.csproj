@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3C67E51-944A-4B5A-9CD6-F5D65C2C8DE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ahr.Psi.Domain</RootNamespace>
+    <AssemblyName>Ahr.Psi.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DomainService.cs" />
+    <Compile Include="Base\EntityAggregateRootBase.cs" />
+    <Compile Include="Base\EntityBase.cs" />
+    <Compile Include="Base\IAggregateRoot.cs" />
+    <Compile Include="Base\IDomainService.cs" />
+    <Compile Include="Base\IRepository.cs" />
+    <Compile Include="Base\IService.cs" />
+    <Compile Include="Base\IUnitOfWorkRepository.cs" />
+    <Compile Include="Base\IValidateSpec.cs" />
+    <Compile Include="Base\Validation.cs" />
+    <Compile Include="Base\ValidationRule.cs" />
+    <Compile Include="Entitys\Customer.cs" />
+    <Compile Include="Entitys\InStockDetail.cs" />
+    <Compile Include="Entitys\InStockMaster.cs" />
+    <Compile Include="Entitys\Product.cs" />
+    <Compile Include="Entitys\Product2.cs" />
+    <Compile Include="Entitys\ProductCategory.cs" />
+    <Compile Include="Entitys\ProductUnit.cs" />
+    <Compile Include="Entitys\PurchaseDetail.cs" />
+    <Compile Include="Entitys\PurchaseMaster.cs" />
+    <Compile Include="Entitys\SaleDetail.cs" />
+    <Compile Include="Entitys\SaleMaster.cs" />
+    <Compile Include="Entitys\SysTransLog.cs" />
+    <Compile Include="Entitys\SysUserLog.cs" />
+    <Compile Include="Entitys\Vender.cs" />
+    <Compile Include="Interfaces\Repositorys\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\Repositorys\IProduct2Repository.cs" />
+    <Compile Include="Interfaces\Services\ICustomerService.cs" />
+    <Compile Include="Interfaces\Services\IProduct2Service.cs" />
+    <Compile Include="Partials\Customer.cs" />
+    <Compile Include="Partials\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\CustomerValidateSpec.cs" />
+    <Compile Include="Validations\ProductValidateSpec.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Interfaces\Logics\" />
+    <Folder Include="Interfaces\Managers\" />
+    <Folder Include="Sql\MonthData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\Base\SysTransLog.sql" />
+    <Content Include="Sql\Base\SysUserLog.sql" />
+    <Content Include="Sql\Code\ProductCategory.sql" />
+    <Content Include="Sql\Code\ProductUnit.sql" />
+    <Content Include="Sql\DaysData\InStock.sql" />
+    <Content Include="Sql\DaysData\Purchase.sql" />
+    <Content Include="Sql\DaysData\SaleBill.sql" />
+    <Content Include="Sql\Master\Customer.sql" />
+    <Content Include="Sql\Master\Product.sql" />
+    <Content Include="Sql\Master\Vender.sql" />
+    <Content Include="Sql\SIS-sample\AccountsPayable.sql" />
+    <Content Include="Sql\SIS-sample\AccountsReceivable.sql" />
+    <Content Include="Sql\SIS-sample\CompanyInfo.sql" />
+    <Content Include="Sql\SIS-sample\CustomerInfo.sql" />
+    <Content Include="Sql\SIS-sample\EmployeeInfo.sql" />
+    <Content Include="Sql\SIS-sample\ItemsInfo.sql" />
+    <Content Include="Sql\SIS-sample\ItemsType.sql" />
+    <Content Include="Sql\SIS-sample\ManufactureInfo.sql" />
+    <Content Include="Sql\SIS-sample\PaymentType.sql" />
+    <Content Include="Sql\SIS-sample\PurchaseDetail.sql" />
+    <Content Include="Sql\SIS-sample\PurchaseMaster.sql" />
+    <Content Include="Sql\SIS-sample\Reversal.sql" />
+    <Content Include="Sql\SIS-sample\RmaDetail.sql" />
+    <Content Include="Sql\SIS-sample\RmaMaster.sql" />
+    <Content Include="Sql\SIS-sample\ShipDetail.sql" />
+    <Content Include="Sql\SIS-sample\ShipMaster.sql" />
+    <Content Include="Sql\SIS-sample\StockDetail.sql" />
+    <Content Include="Sql\SIS-sample\StockMaster.sql" />
+    <Content Include="Sql\SIS-sample\TakeStockDetail.sql" />
+    <Content Include="Sql\SIS-sample\TakeStockMaster.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
